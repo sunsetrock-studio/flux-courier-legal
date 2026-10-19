@@ -18,7 +18,7 @@
     <p class="meta">
         <strong>App:</strong> Folia – Plant Identifier<br>
         <strong>Publisher:</strong> SunsetRock Studio LLC<br>
-        <strong>Last updated:</strong> September 24, 2026
+        <strong>Last updated:</strong> October 18, 2026
     </p>
 
     <h2>Overview</h2>
@@ -28,16 +28,18 @@
     <p>Folia does not create user accounts and does not collect your personal information. The following data is used solely to provide app functionality:</p>
     <ul>
         <li><strong>Photos:</strong> When you scan a plant, the photo is sent to the PlantNet API for identification. Photos are not stored on any server and are not associated with your identity.</li>
-        <li><strong>Plant names and symptoms:</strong> After identification, the plant name is sent to the Anthropic API (Claude) to generate care tips. If you use the Plant Health feature, your symptom description — and, if you choose to attach one, a photo of the plant — is also sent to Claude for diagnosis. No personal information is included in these requests.</li>
-        <li><strong>Ask Anything questions:</strong> If you use the Ask Anything feature, your typed question is sent to Claude to generate an answer. Claude may also request relevant details already saved about that plant (such as your notes, watering schedule, or growth stage) to give a more accurate answer. This data is used only to answer your question and is not stored by Anthropic beyond processing the request.</li>
-        <li><strong>Scan history and notes:</strong> Your saved plants, personal notes, and watering schedules are stored locally on your device, and may sync across your own devices via your iCloud account if enabled. We cannot access this data.</li>
-        <li><strong>Advertising identifier:</strong> With your permission, Google AdMob may use your device's advertising identifier to show personalized ads. You can opt out via iOS Settings → Privacy → Tracking.</li>
+        <li><strong>Plant names, care questions, and health photos:</strong> Growing tips, Ask AI, and photo health checks send the plant name, your question, and (only if you attach one) a plant photo to a Cloudflare service we operate. That service forwards the request to Anthropic's Claude to write the answer, then returns it to your phone. The request does not include your name, email, or Apple ID. We do not store the photo, the question, or the plant name. Anthropic processes the request to generate the answer. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</li>
+        <li><strong>App check and usage count:</strong> Before an AI request, the app sends proof that the request comes from a genuine Folia install, using Apple's App Attest. We keep that install's public key and a daily count of AI requests so the service cannot be abused. This is not your name or Apple ID.</li>
+        <li><strong>Folia Pro receipt:</strong> Ask AI and photo health checks on the App Store also send Apple's signed subscription receipt so we can confirm Folia Pro is active. We use the receipt only for that check and do not store it. Apple processes the payment. We never see your card.</li>
+        <li><strong>Scan history and notes:</strong> Your saved plants, personal notes, and watering schedules are stored locally on your device, and may sync across your own devices via your iCloud account. We cannot access this data. iCloud sync is not part of Folia Pro.</li>
+        <li><strong>Advertising identifier:</strong> Unless you have Folia Pro, Google AdMob may show ads. With your permission, AdMob may use your device's advertising identifier for personalized ads. You can opt out via iOS Settings → Privacy &amp; Security → Tracking. Folia Pro removes these ads.</li>
     </ul>
 
     <h2>Third-Party Services</h2>
     <ul>
         <li><strong>PlantNet API</strong> – Used for plant identification from photos. See their privacy policy at <a href="https://plantnet.org">plantnet.org</a>.</li>
-        <li><strong>Anthropic (Claude)</strong> – Used to generate plant care tips and health diagnoses. See their privacy policy at <a href="https://anthropic.com/privacy">anthropic.com/privacy</a>.</li>
+        <li><strong>Cloudflare</strong> – Receives AI requests from Folia and forwards them to Anthropic. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
+        <li><strong>Anthropic (Claude)</strong> – Writes growing tips, health diagnoses, and Ask AI answers. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</li>
         <li><strong>Wikipedia REST API</strong> – Used to fetch reference photos of identified plants. No personal data is sent. See <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Wikimedia's privacy policy</a>.</li>
         <li><strong>Google AdMob</strong> – Used to display advertisements. AdMob may collect device identifiers and usage data for ad personalization. See Google's privacy policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
         <li><strong>Amazon Associates</strong> – Folia displays affiliate links to Amazon products. Tapping these links takes you to Amazon.com. Amazon may collect data per their privacy policy at <a href="https://www.amazon.com/privacy">amazon.com/privacy</a>. As an Amazon Associate, Folia earns from qualifying purchases.</li>
@@ -56,7 +58,7 @@
     <p>Folia is not directed at children under 13 and does not knowingly collect data from children.</p>
 
     <h2>Data Retention</h2>
-    <p>Plant photos sent to PlantNet and plant names sent to Claude are processed in real time and not stored by us. Saved plant data remains on your device until you delete it.</p>
+    <p>Plant photos sent for identification or a health check, and the text of a care question, are processed to produce that answer and are not stored by us. We keep the app-check record and the daily AI count so we can limit abuse. Saved plant data remains on your device until you delete it.</p>
 
     <h2>Changes to This Policy</h2>
     <p>We may update this policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
